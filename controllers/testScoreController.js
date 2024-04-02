@@ -1,6 +1,7 @@
 const admin = require("../firebase");
 
 const testCollection = admin.firestore().collection("testScore"); // Access users
+// const testCollection = admin.firestore().collection("testScore");
 
 const addTheTest = async (req, res) => {
   const body = req.body;
