@@ -13,8 +13,9 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const AuthRoute = require('./routes/authRoute.js');
-
+const TestRoute=require("./routes/testScoreRoute.js")
 app.use('/auth', AuthRoute);
+app.use('/test',TestRoute);
 
 app.listen(PORT,()=>{
     console.log(`server start listen on port ${PORT}`);

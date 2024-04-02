@@ -6,7 +6,7 @@ const userCollection = admin.firestore().collection('users'); // Access users co
 
 async function register(req, res) {
     try {
-        const { email, password } = req.body;
+        const { email, password, name, phoneNumber, verified, sem } = req.body;
 
         // Hash password
         const salt = await bcrypt.genSalt(10);
@@ -19,9 +19,20 @@ async function register(req, res) {
         }
 
         // Create new user
-        const newUser = await userCollection.add({ email, hashedPassword });
+        const newUser = await userCollection.add({ email, hashedPassword,name,phoneNumber,sem,verified });
 
-        res.json({ message: 'User registered successfully!', userId: newUser.id });
+          const token = jwt.sign({ userId: newUser.id }, secret, {
+            expiresIn: "10d",
+          });
+
+        // res.cookie('token',token,{
+
+        // })
+        res.status(200).json({
+          status: "success",
+          token,
+          data: newUser,
+        });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Internal server error' });
@@ -46,12 +57,16 @@ async function login(req, res) {
         }
 
         // Generate JWT token
-        const token = jwt.sign({ userId: userDoc.docs[0].id }, secret, { expiresIn: '1h' });
+        const token = jwt.sign({ userId: userDoc.docs[0].id }, secret, { expiresIn: '10d' });
 
-        res.json({ message: 'Login successful!', token });
+        res.status(200).json({
+          status:"success",
+          token,
+          data: userDoc.docs[0].data(),
+        });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ message: 'Internal server error' });
+        res.status(500).json({status:"success", message: error.message });
     }
 }
 
