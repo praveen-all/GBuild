@@ -12,7 +12,9 @@ const secret = 'your_secret_key';
 app.use(cors());
 app.use(bodyParser.json());
 
+const AuthRoute = require('./routes/authRoute.js');
 
+app.use('/auth', AuthRoute);
 
 app.listen(PORT,()=>{
     console.log(`server start listen on port ${PORT}`);
