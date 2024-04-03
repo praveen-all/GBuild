@@ -20,12 +20,15 @@ const attendenceRoute=require("./routes/attendenceRoute.js")
 const attendRoute =require("./routes/attendRoute.js")
 const chatRoute=require('./routes/chatRoute.js')
 const messageRoute=require('./routes/messageRoute.js')
+const deadlineRoute = require('./routes/deadlineRoute.js')
+
 app.use('/auth', AuthRoute);
 app.use('/test',TestRoute);
 app.use("/expense",fTrackerRoute);
 app.use("/attendence",attendenceRoute);
 app.use('/attend',attendRoute)
 app.use('/chat',chatRoute)
+app.use('/deadline',deadlineRoute)
 app.use('/message',messageRoute);
 
 // to upload the files into firebase

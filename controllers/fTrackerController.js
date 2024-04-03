@@ -20,7 +20,7 @@ exports.addExpense = async (req, res) => {
 };
 
 exports.getExpenses = async (req, res) => {
-    const userId = req.body.userId;
+    const userId = req.params.userId;
 
     try {
         const expenses = await expenseCollection.where('userId', '==', userId).get();

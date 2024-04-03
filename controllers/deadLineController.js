@@ -30,24 +30,18 @@ exports.addDeadline = async (req, res) => {
 };
 
 exports.getTodaysDeadlines = async (req, res) => {
-    const userId = req.body.userId; // Assuming user ID is sent in the request body
+    const userId = req.params.userId;
 
     try {
         const today = new Date().toDateString();
 
-        // Get deadlines from user document (optional, if storing deadlines there)
-        const userDoc = await userCollection.doc(userId).get();
-        const userDeadlines = userDoc.exists ? userDoc.data().deadlines || [] : [];
-
-        // Get deadlines from deadlines collection
         const deadlineDocs = await deadlineCollection
             .where('userId', '==', userId)
-            .where('deadlineDate', '==', admin.firestore.Timestamp.fromDate(new Date(today)))
             .get();
 
         const todaysDeadlines = deadlineDocs.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
 
-        res.json({ deadlines: [...userDeadlines, ...todaysDeadlines] }); 
+        res.json({ deadlines: todaysDeadlines }); // Removed reference to userDeadlines
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Internal server error' });

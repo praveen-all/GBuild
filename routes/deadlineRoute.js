@@ -4,6 +4,6 @@ const deadlineController = require('../controllers/deadLineController.js');
 const router = express.Router();
 
 router.post('/', deadlineController.addDeadline);
-router.get('/today', deadlineController.getTodaysDeadlines);
+router.get('/today/:userId', deadlineController.getTodaysDeadlines);
 
 module.exports = router;
