@@ -20,11 +20,6 @@ exports.addDeadline = async (req, res) => {
             completed: false, // Add a field to track completion status (optional)
         };
 
-        // Add deadline to user's deadlines array in user document (optional)
-        await userCollection.doc(userId).update({
-            deadlines: admin.firestore.FieldValue.arrayUnion(deadline),
-        });
-
         await deadlineCollection.add({ userId, ...deadline }); // Add deadline to separate deadlines collection
 
         res.json({ message: 'Deadline added successfully!' });

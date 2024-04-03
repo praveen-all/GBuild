@@ -16,11 +16,13 @@ const AuthRoute = require('./routes/authRoute.js');
 const TestRoute=require("./routes/testScoreRoute.js");
 const fTrackerRoute = require("./routes/fTrackerRoute.js")
 const attendenceRoute=require("./routes/attendenceRoute.js")
+const attendRoute =require("./routes/attendRoute.js")
 
 app.use('/auth', AuthRoute);
 app.use('/test',TestRoute);
 app.use("/expense",fTrackerRoute);
 app.use("/attendence",attendenceRoute);
+app.use('/attend',attendRoute)
 
 app.listen(PORT,()=>{
     console.log(`server start listen on port ${PORT}`);
