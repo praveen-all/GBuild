@@ -205,10 +205,93 @@ const getAllChatbyUserId = async (req, res) => {
   }
 };
 
+const updateGroupName = async (req, res) => {
+  const { chatId, chatname } = req.body;
+
+  if (!chatname) {
+    return res.status(401).json({
+      status: "fails",
+      message: "please provide groupName",
+    });
+  }
+  try {
+    const chatRef = chatCollection.doc(chatId);
+    await chatRef.update({ chatname });
+    //    console.log((await chatRef.get()).data());
+    res
+      .status(200)
+      .json({ status: "sucess", message: "Chatname updated successfully" });
+  } catch (error) {
+    console.error("Error getting chats:", error.message);
+    res.status(500).json({
+      status: "error",
+      message: error.message,
+    });
+  }
+};
+
+const addUserTogroup = async (req, res) => {
+  try {
+    // const chatId = req.params.chatId;
+    const { userId, chatId } = req.body;
+
+    if (!userId) {
+      return res.status(400).json({ error: "User ID is required" });
+    }
+
+    const chatRef = chatCollection.doc(chatId);
+    const chatDoc = await chatRef.get();
+
+    if (!chatDoc.exists) {
+      return res.status(404).json({ error: "Chat document not found" });
+    }
+
+    const userRef = userCollection.doc(userId);
+
+    const chatData = chatDoc.data();
+    const users = chatData.users || [];
+    if (!users.some((user) => user.isEqual(userRef))) {
+      users.push(userRef);
+      await chatRef.update({ users });
+    }
+
+    res.status(200).json({ message: "User added to the group successfully" });
+  } catch (error) {
+    console.error("Error adding user to group:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+const deleteChat = async (req, res) => {
+  try {
+    const { chatId } = req.body;
+
+    // Check if the chat document exists
+    const chatRef = chatCollection.doc(chatId);
+    const chatDoc = await chatRef.get();
+
+    if (!chatDoc.exists) {
+      return res.status(404).json({ error: "Chat document not found" });
+    }
+
+    // Delete the chat document
+    await chatRef.delete();
+
+    res.status(200).json({ message: "Chat deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting chat:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
 module.exports = {
   findUser,
   createChat,
   getChatById,
   createGroup,
   getAllChatbyUserId,
+  updateGroupName,
+  addUserTogroup,
+  deleteChat
+  
 };
