@@ -2,16 +2,14 @@ const admin = require("../firebase");
 
 const attendCollection = admin.firestore().collection("attendence");
 
-const createAt=async (req, res) => {
+const createAt = async (req, res) => {
   try {
-    const {  sem, subjects } = req.body;
+    const { sem, subjects } = req.body;
 
-    
     const docRef = attendCollection.doc();
 
-
     await docRef.set({
-      userId:req.userId,
+      userId: req.userId,
       sem,
       subjects: subjects.reduce(
         (acc, subject) => ({ ...acc, [subject]: [] }),
@@ -25,7 +23,6 @@ const createAt=async (req, res) => {
     res.status(500).send("Error creating document");
   }
 };
-
 
 const getBysem = async (req, res) => {
   try {
@@ -55,33 +52,33 @@ const getBysem = async (req, res) => {
   }
 };
 
-
-
-const update=async (req, res) => {
+const update = async (req, res) => {
   try {
-    const {  sem, subject, attendance } = req.body;
+    const { sem, subject, attendance } = req.body;
 
     const querySnapshot = await attendCollection
-      .where('userId', '==', req.userId)
-      .where('sem', '==', sem)
+      .where("userId", "==", req.userId)
+      .where("sem", "==", sem)
       .get();
 
     const updatePromises = [];
-    querySnapshot.forEach(doc => {
+    querySnapshot.forEach((doc) => {
       const docRef = attendCollection.doc(doc.id);
-      updatePromises.push(docRef.update({
-        [`subjects.${subject}`]: admin.firestore.FieldValue.arrayUnion(attendance)
-      }));
+      updatePromises.push(
+        docRef.update({
+          [`subjects.${subject}`]:
+            admin.firestore.FieldValue.arrayUnion(attendance),
+        })
+      );
     });
 
     await Promise.all(updatePromises);
 
-    res.status(200).send('Attendance data updated successfully!');
+    res.status(200).send("Attendance data updated successfully!");
   } catch (error) {
-    console.error('Error updating attendance data:', error);
-    res.status(500).send('Error updating attendance data');
+    console.error("Error updating attendance data:", error);
+    res.status(500).send("Error updating attendance data");
   }
 };
-
 
 module.exports = { createAt, getBysem, update };
