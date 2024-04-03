@@ -23,10 +23,10 @@ const addTheTest = async (req, res) => {
 };
 
 const getSemTest = async (req, res) => {
-  const { sem } = req.body;
-
+  let { sem } = req.query;
+  // sem=parseInt(sem,10);
   if (!sem) {
-    return res.status(401).json({
+     res.status(401).json({
       status: "fails",
       message: "please provide the sem & user",
     });

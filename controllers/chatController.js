@@ -6,8 +6,8 @@ const chatCollection = admin.firestore().collection("chat"); // Access users col
 const userCollection = admin.firestore().collection("users");
 
 const findUser = async (req, res) => {
-  const { name } = req.body;
-  //   console.log(name);
+  const { name } = req.query;
+    console.log(name);
   if (!name) {
     return res.status(404).json({
       status: "error",
@@ -53,6 +53,7 @@ const createChat = async (req, res) => {
     const { chatname, isGroupChat, userId } = req.body;
     const users = [req.userId, userId];
     // Validate request body
+    console.log(req.userId);
     if (!chatname || !users || !Array.isArray(users)) {
       return res.status(400).json({ error: "Invalid request body" });
     }
@@ -64,7 +65,7 @@ const createChat = async (req, res) => {
       users: users.map((uid) => userCollection.doc(uid)),
     });
 
-    res.status(201).json({ id: newChatRef.id });
+    res.status(201).json({ status:"sucess",id: newChatRef.id,message:'chat created success' });
   } catch (error) {
     console.error("Error getting chats:", error.message);
     res.status(500).json({

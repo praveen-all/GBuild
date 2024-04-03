@@ -13,7 +13,7 @@ const { protect } = require("../middleware/authMiddleware.js");
 
 const router = express.Router();
 
-router.get("/findUser", findUser);
+router.get("/findUser", protect,findUser);
 router.post("/create", protect, createChat);
 router.post("/createGroup", protect, createGroup);
 router.get("/chats:chatId", protect, getChatById);
