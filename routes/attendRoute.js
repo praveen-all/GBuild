@@ -4,7 +4,7 @@ const attendanceController = require('../controllers/attendController');
 const router = express.Router();
 
 router.post('/', attendanceController.createAttendance);
-router.put('/', attendanceController.updateAttendance);
-router.get('/', attendanceController.getAllSubjectsAttendance);
+router.put('/:subjectId', attendanceController.updateAttendance);
+router.get('/:userId', attendanceController.getAllSubjectsAttendance);
 
 module.exports = router;
