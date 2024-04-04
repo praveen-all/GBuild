@@ -19,229 +19,6 @@ headers :
 ````
 
 # Features Implemented:
-# Student Performance Analytics API
- This repository contains the backend code to track Scores. This API allows users to add and retrieve Scores.  
- ### Add Test-Score
-
-- **Endpoint:** `/tests`
-- **Method:** `POST`
-- **Description:** Adds a new test score for a user.
-- **Request Body:**
-  ```json
-  {
-    "userId": "user_id_here",
-    "score": 85,
-    "sem": "semester_name_here"
-  }
- ### Get Test-Score
-
-- **Endpoint:** `/tests`
-- **Method:** `GET`
-- **Description:** Retrieves test scores for a specific semester and user.
-- **Request Body:**
-  ```json
-  {
-    "userId": "user_id_here",
-    "sem": "semester_name_here"
-  }
- # Student Expense Tracker API 
- Student Expense Tracker API enables students to manage and track their expenses. It allows users to add ,Get , Update and Delete Expenses.
- ## Endpoints
-### Add Expense
-
-- **Endpoint:** `/expenses`
-- **Method:** `POST`
-- **Description:** Adds a new expense for a user.
-- **Request Body:**
-  ```json
-    {
-      "userId": "user_id_here",
-      "amount": 50.00,
-      "category": "category_name_here"
-    }
-   ```
-### Get Expense
-
-- **Endpoint:** `/expenses/:userId`
-- **Method:** `GET`
-- **Description:** Retrieves expenses for a specific user.
-- **Response Body:**
-  ```json
-  {
-    "userId": "user_id_here",
-    "amount": 50.00,
-    "category": "category_name_here"
-  }
- ### Update Expense
-
-- **Endpoint:** `/expenses/:expenseId`
-- **Method:** `PUT`
-- **Description:** Updates the details of a specific expense.
-- **Request Body:** 
-  ```json
-  {  
-   "amount": 60.00,
-   "category": "new_category_name_here"
-  }
-
-### Delete Expense
-
-- **Endpoint:** `/expenses/:expenseId`
-- **Method:** `DELETE`
-- **Description:** Deletes a specific expense.
-     
-# Deadline Reminder
-
-This repository contains the backend code for a deadline reminder system. This API allows users to add, retrieve, and delete deadlines.
-
-## Endpoints
-
-### Add Deadline
-
-- **Endpoint**: `/deadline`
-
-- **Method**: `POST`
-
-- **Description**: Adds a new deadline for a user.
-
-- **Request Body**:
-   ```json
-   {
-      "userId": "user_id_here",
-      "taskName": "task_name_here",
-      "deadlineDate": "deadline_date_here"
-   }
-
-### GET All Deadlines
-
-- **Endpoint**: `/deadline/:userId`
-
-- **Method**: `GET`
-
-- **Description**: Gives json response of all the deadlines listed by the user
-
-- **Response Data**:
-   ```json
-   {
-    "deadlines": [
-        {
-            "deadlineDate": "2024-04-05",
-            "taskName": "OS Internals",
-            "completed": false,
-            "userId": "CEDpGAnGPN5iFLhjfWyi",
-            "id": "0nYwFNFOwpfYsfo522vI"
-        },
-        {
-            "deadlineDate": "2024-04-04",
-            "taskName": "DBMS Proj",
-            "completed": false,
-            "userId": "CEDpGAnGPN5iFLhjfWyi",
-            "id": "LAXh2WsmzM6vS8TS76sT"
-        }
-    ]
-   }
-### GET Today's Deadlines
-
-- **Endpoint**: `/deadline/today/:userId`
-
-- **Method**: `GET`
-
-- **Description**: Gives json response of all the deadlines for the current day (2024-04-04) listed by the user
-
-- **Response Data**:
-  ```json
-  {
-    "deadlines": [
-        {
-            "deadlineDate": "2024-04-04",
-            "taskName": "DBMS Proj",
-            "completed": false,
-            "userId": "CEDpGAnGPN5iFLhjfWyi",
-            "id": "LAXh2WsmzM6vS8TS76sT"
-        }
-    ]
-  }
- # Attendance Tracking System API
-
-This repository contains the backend code for an attendance tracking system API. This API allows users to add subjects for tracking attendance within a specific semester.
-
-## Endpoints
-
-### Create Attendance
-
-- **Endpoint**: `/attend`
-
-- **Method**: `POST`
-
-- **Description**: Adds a new subject for a user of a semester to track attendance.
-
-- **Request Body**:
-   ```json
-   {
-     "userId": "user_id_here",
-     "semester": "semester_name_here",
-     "subject": "subject_name_here"
-   }
-
-### Update Attendance
-
-- **Endpoint**: `/:subjectId`
-
-- **Method**: `PUT`
-
-- **Description**: Updates the attendance data for the specified subject ID.
-
-- **Request Body**: 
-  ```json
-  {
-    "userId": "user_id_here",
-    "semester": "semester_name_here",
-    "subject": "subject_name_here",
-    "classesAttended": 10,
-    "totalClasses": 15
-  }
-### Get Attendance
-
-- **Endpoint**: `/:userId`
-
-- **Method**: `GET`
-
-- **Description**: Retrieves the attendance details of all the subject added by the user  
-- **Response Data**:
-  ```json
-  {
-    "attendance": [
-        {
-            "subject": "DAA",
-            "semester": "4",
-            "userId": "CEDpGAnGPN5iFLhjfWyi",
-            "classesAttended": 2,
-            "totalClasses": 4,
-            "attendancePercentage": 50,
-            "id": "LQcc5zJphl61r64gxyNL"
-        },
-        {
-            "subject": "DBMS",
-            "semester": 3,
-            "userId": "CEDpGAnGPN5iFLhjfWyi",
-            "totalClasses": 22,
-            "attendancePercentage": 81.81818181818183,
-            "classesAttended": 18,
-            "id": "fSYJui8xtO0mW3WQR3yY"
-        },
-        {
-            "subject": "OS",
-            "semester": 3,
-            "userId": "CEDpGAnGPN5iFLhjfWyi",
-            "totalClasses": 4,
-            "attendancePercentage": 50,
-            "classesAttended": 2,
-            "id": "vkDsNP5s8o3gm4VJwz0W"
-        }
-    ]
-  }
---------
-
 # TestScore Management System API
 The API facilitates the management of test scores, allowing users to record and track scores for various subjects within specified semesters.
 ## Endpoints
@@ -394,6 +171,232 @@ The API facilitates the management of test scores, allowing users to record and 
     ]
 }
 ````
+
+# Student Test-Score Analytics API
+ This repository contains the backend code to track Scores. This API allows users to add and retrieve Scores.  
+ ### Add Test-Score
+
+- **Endpoint:** `/tests`
+- **Method:** `POST`
+- **Description:** Adds a new test score for a user.
+- **Request Body:**
+  ```json
+  {
+    "userId": "user_id_here",
+    "score": 85,
+    "sem": "semester_name_here"
+  }
+ ### Get Test-Score
+
+- **Endpoint:** `/tests`
+- **Method:** `GET`
+- **Description:** Retrieves test scores for a specific semester and user.
+- **Request Body:**
+  ```json
+  {
+    "userId": "user_id_here",
+    "sem": "semester_name_here"
+  }
+ # Attendance Tracking System API
+
+This repository contains the backend code for an attendance tracking system API. This API allows users to add subjects for tracking attendance within a specific semester.
+
+## Endpoints
+
+### Create Attendance
+
+- **Endpoint**: `/attend`
+
+- **Method**: `POST`
+
+- **Description**: Adds a new subject for a user of a semester to track attendance.
+
+- **Request Body**:
+   ```json
+   {
+     "userId": "user_id_here",
+     "semester": "semester_name_here",
+     "subject": "subject_name_here"
+   }
+
+### Update Attendance
+
+- **Endpoint**: `/:subjectId`
+
+- **Method**: `PUT`
+
+- **Description**: Updates the attendance data for the specified subject ID.
+
+- **Request Body**: 
+  ```json
+  {
+    "userId": "user_id_here",
+    "semester": "semester_name_here",
+    "subject": "subject_name_here",
+    "classesAttended": 10,
+    "totalClasses": 15
+  }
+### Get Attendance
+
+- **Endpoint**: `/:userId`
+
+- **Method**: `GET`
+
+- **Description**: Retrieves the attendance details of all the subject added by the user  
+- **Response Data**:
+  ```json
+  {
+    "attendance": [
+        {
+            "subject": "DAA",
+            "semester": "4",
+            "userId": "CEDpGAnGPN5iFLhjfWyi",
+            "classesAttended": 2,
+            "totalClasses": 4,
+            "attendancePercentage": 50,
+            "id": "LQcc5zJphl61r64gxyNL"
+        },
+        {
+            "subject": "DBMS",
+            "semester": 3,
+            "userId": "CEDpGAnGPN5iFLhjfWyi",
+            "totalClasses": 22,
+            "attendancePercentage": 81.81818181818183,
+            "classesAttended": 18,
+            "id": "fSYJui8xtO0mW3WQR3yY"
+        },
+        {
+            "subject": "OS",
+            "semester": 3,
+            "userId": "CEDpGAnGPN5iFLhjfWyi",
+            "totalClasses": 4,
+            "attendancePercentage": 50,
+            "classesAttended": 2,
+            "id": "vkDsNP5s8o3gm4VJwz0W"
+        }
+    ]
+  }
+--------
+
+  
+ # Student Expense Tracker API 
+ Student Expense Tracker API enables students to manage and track their expenses. It allows users to add ,Get , Update and Delete Expenses.
+ ## Endpoints
+### Add Expense
+
+- **Endpoint:** `/expenses`
+- **Method:** `POST`
+- **Description:** Adds a new expense for a user.
+- **Request Body:**
+  ```json
+    {
+      "userId": "user_id_here",
+      "amount": 50.00,
+      "category": "category_name_here"
+    }
+   ```
+### Get Expense
+
+- **Endpoint:** `/expenses/:userId`
+- **Method:** `GET`
+- **Description:** Retrieves expenses for a specific user.
+- **Response Body:**
+  ```json
+  {
+    "userId": "user_id_here",
+    "amount": 50.00,
+    "category": "category_name_here"
+  }
+ ### Update Expense
+
+- **Endpoint:** `/expenses/:expenseId`
+- **Method:** `PUT`
+- **Description:** Updates the details of a specific expense.
+- **Request Body:** 
+  ```json
+  {  
+   "amount": 60.00,
+   "category": "new_category_name_here"
+  }
+
+### Delete Expense
+
+- **Endpoint:** `/expenses/:expenseId`
+- **Method:** `DELETE`
+- **Description:** Deletes a specific expense.
+     
+# Deadline Reminder
+
+This repository contains the backend code for a deadline reminder system. This API allows users to add, retrieve, and delete deadlines.
+
+## Endpoints
+
+### Add Deadline
+
+- **Endpoint**: `/deadline`
+
+- **Method**: `POST`
+
+- **Description**: Adds a new deadline for a user.
+
+- **Request Body**:
+   ```json
+   {
+      "userId": "user_id_here",
+      "taskName": "task_name_here",
+      "deadlineDate": "deadline_date_here"
+   }
+
+### GET All Deadlines
+
+- **Endpoint**: `/deadline/:userId`
+
+- **Method**: `GET`
+
+- **Description**: Gives json response of all the deadlines listed by the user
+
+- **Response Data**:
+   ```json
+   {
+    "deadlines": [
+        {
+            "deadlineDate": "2024-04-05",
+            "taskName": "OS Internals",
+            "completed": false,
+            "userId": "CEDpGAnGPN5iFLhjfWyi",
+            "id": "0nYwFNFOwpfYsfo522vI"
+        },
+        {
+            "deadlineDate": "2024-04-04",
+            "taskName": "DBMS Proj",
+            "completed": false,
+            "userId": "CEDpGAnGPN5iFLhjfWyi",
+            "id": "LAXh2WsmzM6vS8TS76sT"
+        }
+    ]
+   }
+### GET Today's Deadlines
+
+- **Endpoint**: `/deadline/today/:userId`
+
+- **Method**: `GET`
+
+- **Description**: Gives json response of all the deadlines for the current day (2024-04-04) listed by the user
+
+- **Response Data**:
+  ```json
+  {
+    "deadlines": [
+        {
+            "deadlineDate": "2024-04-04",
+            "taskName": "DBMS Proj",
+            "completed": false,
+            "userId": "CEDpGAnGPN5iFLhjfWyi",
+            "id": "LAXh2WsmzM6vS8TS76sT"
+        }
+    ]
+  }
+
 # Collabration  System API
 Collaboration System API for facilitating user communication and notifications within a collaborative platform.
 ## Endpoints
