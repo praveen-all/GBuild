@@ -67,17 +67,8 @@ Endpoint: `/:userId`
 
 Method: `GET`
 
-Description: Retrieves attendance data for a specific user
+Description: Retrieves the attendance details of all the subject added by the user  
 
-Request Body:
-
-```json
-{
-   "userId": "user_id_here",
-  "semester": "semester_name_here",
-  "subject": "subject_name_here"   
-}
-```
 --------
 
 # Technology Stack:
