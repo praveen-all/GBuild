@@ -26,8 +26,8 @@ Our solution is designed to cater to the academic needs of Varun, a student at t
          andtotalClasses 
          }
       ```
-   - **Fetching Attendance Data**:
-      - when Varun requests his attendance data for a specific semester.
+   - **Fetching Attendance Data**: ( _router.get("/get", protect ,getBysem);_ )
+      - when Varun requests his attendance data for a specific semester. ( _.get('/:userId'_ )
       - The server retrieves the attendance data from the database based on Varun's user ID and the specified semester and sends it back to Varun in JSON format.
 - **Expense Tracker**
    - Provides a tool to track expenses related to college.
