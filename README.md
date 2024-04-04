@@ -76,7 +76,7 @@ Endpoint: `/deadline/today/:userId`
 
 Method: `GET`
 
-Description: Gives json response of all the deadlines for the current day listed by the user
+Description: Gives json response of all the deadlines for the current day (2024-04-04) listed by the user
 
 Response Data:
 
