@@ -6,14 +6,62 @@ Our solution is designed to cater to the academic needs of Varun, a student at t
 </div>
 
 #### Features Implemented:
- # Student Performance Analytics API
+   # Student Performance Analytics API
    - When Varun enters his test scores for each course, he   interacts with the system by sending a request to add the test  scores.
    - He provides the test scores along with the semester information.
     The system stores this information securely in the database, allowing Varun to track his academic progress over time.
 
  # Student Expense Tracker API 
-   - Provides a tool to track expenses related to college.
-   - Includes tuition fees, textbooks, stationery, and other educational expenses.
+ ## Endpoints
+### Add Expense
+
+- **Endpoint:** `/expenses`
+- **Method:** `POST`
+- **Description:** Adds a new expense for a user.
+- **Request Body:**
+  ```json
+    {
+      "userId": "user_id_here",
+      "amount": 50.00,
+      "category": "category_name_here"
+    }
+   ```
+### Get Expense
+
+**Endpoint:** `/expenses/:userId`
+
+**Method:** `GET`
+
+**Description:** Retrieves expenses for a specific user.
+- **Request Body:**
+  ```json
+  {
+    "userId": "user_id_here",
+    "amount": 50.00,
+    "category": "category_name_here"
+  }
+ ### Update Expense
+
+- **Endpoint:** `/expenses/:expenseId`
+- **Method:** `PUT`
+- **Description:** Updates the details of a specific expense.
+- **Request Body:** 
+  ```json
+  {
+
+  }
+
+### Delete Expense
+
+- **Endpoint:** `/expenses/:expenseId`
+- **Method:** `DELETE`
+- **Description:** Deletes a specific expense.
+- **Request Body:** 
+  ```json
+  {
+   
+  }
+.
      
  # Deadline Reminder
 
