@@ -201,7 +201,35 @@ This repository contains the backend code for an attendance tracking system API.
 - **Request Body**:
   ```json
   {
-
+    "attendance": [
+        {
+            "subject": "DAA",
+            "semester": "4",
+            "userId": "CEDpGAnGPN5iFLhjfWyi",
+            "classesAttended": 2,
+            "totalClasses": 4,
+            "attendancePercentage": 50,
+            "id": "LQcc5zJphl61r64gxyNL"
+        },
+        {
+            "subject": "DBMS",
+            "semester": 3,
+            "userId": "CEDpGAnGPN5iFLhjfWyi",
+            "totalClasses": 22,
+            "attendancePercentage": 81.81818181818183,
+            "classesAttended": 18,
+            "id": "fSYJui8xtO0mW3WQR3yY"
+        },
+        {
+            "subject": "OS",
+            "semester": 3,
+            "userId": "CEDpGAnGPN5iFLhjfWyi",
+            "totalClasses": 4,
+            "attendancePercentage": 50,
+            "classesAttended": 2,
+            "id": "vkDsNP5s8o3gm4VJwz0W"
+        }
+    ]
   }
 --------
 
