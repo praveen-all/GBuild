@@ -204,6 +204,7 @@ This repository contains the backend code for an attendance tracking system API.
         }
     ]
 }
+```
 --------
 
 # Technology Stack:
