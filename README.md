@@ -5,6 +5,16 @@ Our solution is designed to cater to the academic needs of Varun, a student at t
     <img src="https://github.com/Rohith1905/impetus24/raw/main/Presentation0.jpg" alt="Description of the image" width="400">
 </div>
 
+###
+Note : Upon successful login or signup, an authorization JWT token will be provided. This token must be included in the headers of every subsequent request for authentication
+
+headers :
+```json
+ {
+      Authorization: `Bearer token`,
+ }
+````
+
 #### Features Implemented:
 # Student Performance Analytics API
  !--description .  
