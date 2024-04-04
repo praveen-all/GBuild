@@ -5,37 +5,6 @@ Our solution is designed to cater to the academic needs of Varun, a student at t
     <img src="https://github.com/Rohith1905/impetus24/raw/main/Presentation0.jpg" alt="Description of the image" width="400">
 </div>
 
-#### Features Implemented:
-- **Test Score Tracker**
-   - When Varun enters his test scores for each course, he   interacts with the system by sending a request to add the test  scores.
-   - He provides the test scores along with the semester information.
-    The system stores this information securely in the database, allowing Varun to track his academic progress over time.
-- **Attendance Management**
-  - **creating attendance**: ( _.post("/create", protect,createAt_ ); )
-  - Varun provides the necessary data
-     ```
-      { _userId, semester, subject } = req.body 
-     ```
-  - The system _POST_ this request by creating an attendance record with initial values (e.g., totalClasses, classesAttended, attendancePercentage), and stores it in the database.
-                                          
-   - **Data manipulation**: ( _put("/update", protect,createAt_ );_ )
-      - Varun provides the subject ID along with updated attendance data:  ( *.put('/:subjectId'* )
-      ``` 
-        { semester, subject, 
-         classesAttended, 
-         andtotalClasses 
-         }
-      ```
-   - **Fetching Attendance Data**: ( _router.get("/get", protect ,getBysem);_ )
-      - when Varun requests his attendance data for a specific semester. ( _.get('/:userId'_ )
-      - The server retrieves the attendance data from the database based on Varun's user ID and the specified semester and sends it back to Varun in JSON format.
-- **Expense Tracker**
-   - Provides a tool to track expenses related to college.
-   - Includes tuition fees, textbooks, stationery, and other educational expenses.
-- **Deadline Reminders**
-   - Allows Varun to set reminders for assignment deadlines, project submissions, exam dates, and more.
-   - Facilitates organization and helps Varun meet academic commitments.
-
 # Attendance Tracking System API
 
 This repository contains the backend code for an attendance tracking system API. This API allows users to add subjects for tracking attendance within a specific semester.
