@@ -21,7 +21,7 @@ const attendRoute =require("./routes/attendRoute.js")
 const chatRoute=require('./routes/chatRoute.js')
 const messageRoute=require('./routes/messageRoute.js')
 const deadlineRoute = require('./routes/deadlineRoute.js')
-
+const resourceRoute=require('./routes/resourceRoute.js')
 app.use('/auth', AuthRoute);
 app.use('/test',TestRoute);
 app.use("/expense",fTrackerRoute);
@@ -30,6 +30,7 @@ app.use('/attend',attendRoute)
 app.use('/chat',chatRoute)
 app.use('/deadline',deadlineRoute)
 app.use('/message',messageRoute);
+app.use("/resource", resourceRoute);
 
 // to upload the files into firebase
 app.post("/upload", upload.single("file"), async (req, res) => {
@@ -55,9 +56,9 @@ app.post("/upload", upload.single("file"), async (req, res) => {
  
     const fileUrl = `https://storage.googleapis.com/${bucket.name}/${filename}`;
 
-    // fs.unlinkSync(req.file.path);
-
-    res.status(200).send({ fileUrl });
+      // console.log(fileUrl);
+    
+    res.status(200).send({ url:fileUrl });
   } catch (error) {
     console.error("Error uploading file:", error.message);
     res.status(500).send("Error uploading file.");

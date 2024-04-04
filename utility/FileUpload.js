@@ -21,8 +21,9 @@ const fileupload=async(upload.single('file'), async (req, res) => {
         const fileUrl = `https://storage.googleapis.com/${bucket.name}/${filename}`;
 
         fs.unlinkSync(req.file.path);
-
+     
         res.status(200).send({ fileUrl });
+        
     } catch (error) {
         console.error('Error uploading file:', error);
         res.status(500).send('Error uploading file.');
