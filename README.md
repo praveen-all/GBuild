@@ -198,7 +198,7 @@ This repository contains the backend code for an attendance tracking system API.
 - **Method**: `GET`
 
 - **Description**: Retrieves the attendance details of all the subject added by the user  
-- **Request Body**:
+- **Response Data**:
   ```json
   {
     "attendance": [
