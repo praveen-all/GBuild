@@ -2,23 +2,20 @@ const admin = require('../firebase');
 
 // Initialize Firebase Admin (assuming you have a separate initialization file)
 const db = admin.firestore();
-const attendanceCollection = db.collection('attend'); 
-
+const attendanceCollection = db.collection('attend');
+ 
 exports.createAttendance = async (req, res) => {
     try {
         const { userId, semester, subject } = req.body;
-        let totalClasses = 0;
-        let classesAttended = 0;
         const attendanceData = {
             semester,
             subject,
-            totalClasses,
-            classesAttended,
-            attendancePercentage: (classesAttended / totalClasses) * 100, // Calculate attendance percentage
+            totalClasses: 0,
+            classesAttended: 0,
+            attendancePercentage: 0, // Initialize to 0 for initial creation
         };
 
-
-        await attendanceCollection.add({ userId, ...attendanceData }); // Add to separate attendance collection
+        await attendanceCollection.add({ userId, ...attendanceData }); // Add to attendance collection
 
         res.json({ message: 'Attendance created successfully!' });
     } catch (error) {
