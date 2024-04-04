@@ -233,6 +233,370 @@ This repository contains the backend code for an attendance tracking system API.
   }
 --------
 
+# Collabration  System API
+Collaboration System API for facilitating user communication and notifications within a collaborative platform.
+
+## Endpoints
+
+### Find The User
+
+Endpoint: `chat/findUser`
+
+Method: `GET`
+
+Description: Retrieves all users whose names start with the specified parameter provided as input, facilitating efficient searching and filtering based on name prefixes
+
+Request Params: 
+
+```json
+{
+   "name":"kiran"
+}
+```
+
+Response Data:
+
+```json
+{
+    "status": "success",
+    "data": [
+        {
+            "username": "kiran",
+            "userId": "snYORls5tazdl47TlYP1",
+            "email": "kiran.46.47@gmail.com"
+        }
+    ]
+}
+```
+
+### Create a Chat
+
+Endpoint: `chat/create`
+
+Method: `POST`
+
+Description: Creates a chat between two users. The request body should include the following parameters:
+
+Request Body: 
+
+```json
+{
+  "chatname": "lava",
+  "userId": "frAe1KukfYsbvzwSc6DX",
+  "isGroupChat": false
+}
+```
+
+Response Data:
+
+```json
+{
+    "status": "sucess",
+    "id": "Z8uT5u8rRkw0GJT3X1G8",
+    "message": "chat created success"
+}
+```
+
+
+### Get the chat
+
+Endpoint: `chat/chats${chatId}`
+
+Method: `GET`
+
+Description: Retrieve the Majestic Chat Information by the Glorious Chat ID!:
+
+Response Data:
+
+```json
+{
+    "id": "6e4CSMIOqhaIbCOrZBqG",
+    "chatname": "uvce",
+    "isGroupChat": true,
+    "users": [
+        {
+            "name": "Praveen Kumar G",
+            "email": "pngh.46.47@gmail.com",
+            "phoneNumber": 7892626547,
+            "sem": 1
+        },
+        {
+            "name": "kiran",
+            "email": "kiran.46.47@gmail.com",
+            "phoneNumber": 123456789,
+            "sem": 3
+        },
+        {
+            "name": "lava",
+            "email": "lava.46.47@gmail.com",
+            "phoneNumber": 123456789,
+            "sem": 3
+        },
+        {
+            "name": "manu",
+            "email": "manu.46.47@gmail.com",
+            "phoneNumber": 123456789,
+            "sem": 3
+        }
+    ]
+}
+```
+
+### Get all chat
+
+Endpoint: `chat/getAll`
+
+Method: `GET`
+
+Description: Retrieves all users whose names start with the specified parameter provided as input, facilitating efficient searching and filtering based on name prefixes
+
+Response Data:
+
+```json
+{
+    "status": "suceess",
+    "data": [
+        {
+            "id": "6e4CSMIOqhaIbCOrZBqG",
+            "groupAdmin": "kPtLs6EB74dwrwZjm8GQ",
+            "chatname": "uvce",
+            "isGroupChat": true,
+            "users": [
+                {
+                    "id": "kPtLs6EB74dwrwZjm8GQ",
+                    "email": "pngh.46.47@gmail.com",
+                    "name": "Praveen Kumar G",
+                    "phoneNumber": 7892626547
+                },
+                {
+                    "id": "snYORls5tazdl47TlYP1",
+                    "email": "kiran.46.47@gmail.com",
+                    "name": "kiran",
+                    "phoneNumber": 123456789
+                },
+                {
+                    "id": "frAe1KukfYsbvzwSc6DX",
+                    "email": "lava.46.47@gmail.com",
+                    "name": "lava",
+                    "phoneNumber": 123456789
+                },
+                {
+                    "id": "Z8biT1s6VxInca5BK75B",
+                    "email": "manu.46.47@gmail.com",
+                    "name": "manu",
+                    "phoneNumber": 123456789
+                }
+            ]
+        },
+        {
+            "id": "Z8uT5u8rRkw0GJT3X1G8",
+            "chatname": "lava",
+            "isGroupChat": false,
+            "users": [
+                {
+                    "id": "kPtLs6EB74dwrwZjm8GQ",
+                    "email": "pngh.46.47@gmail.com",
+                    "name": "Praveen Kumar G",
+                    "phoneNumber": 7892626547
+                },
+                {
+                    "id": "frAe1KukfYsbvzwSc6DX",
+                    "email": "lava.46.47@gmail.com",
+                    "name": "lava",
+                    "phoneNumber": 123456789
+                }
+            ]
+        },
+        {
+            "id": "GMou3KDxEgCNXsZsMAbJ",
+            "groupAdmin": "kPtLs6EB74dwrwZjm8GQ",
+            "chatname": "hi gorup",
+            "isGroupChat": true,
+            "users": [
+                {
+                    "id": "kPtLs6EB74dwrwZjm8GQ",
+                    "email": "pngh.46.47@gmail.com",
+                    "name": "Praveen Kumar G",
+                    "phoneNumber": 7892626547
+                },
+                {
+                    "id": "Z8biT1s6VxInca5BK75B",
+                    "email": "manu.46.47@gmail.com",
+                    "name": "manu",
+                    "phoneNumber": 123456789
+                },
+                {
+                    "id": "snYORls5tazdl47TlYP1",
+                    "email": "kiran.46.47@gmail.com",
+                    "name": "kiran",
+                    "phoneNumber": 123456789
+                }
+            ]
+        }
+    ]
+}
+```
+
+### Create a group chat
+
+Endpoint: `chat/createGroup`
+
+Method: `POST`
+
+Description: Forge a Magnificent Group, Gathering Diverse Souls in Unity!
+
+Request body: 
+
+```json
+{
+    "chatname":"UVCE BOYS hostel",
+    "isGroupChat":true,
+    "userss":["snYORls5tazdl47TlYP1","Z8biT1s6VxInca5BK75B"]
+}
+```
+
+Response Data:
+
+```json
+{
+    "id": "OSQfEPYVFOySADaBY9Tc"
+}
+```
+
+### Add user to group
+
+Endpoint: `chat/createGroup`
+
+Method: `PUT`
+
+Description: Incorporate a user into the group
+
+Request body: 
+
+```json
+{
+    "chatId":"6e4CSMIOqhaIbCOrZBqG",
+    "userId":"V80Mv7ZkE97pfhQe4rw2"
+}
+```
+
+Response Data:
+
+```json
+{
+    "message": "User added to the group successfully"
+}
+```
+
+### Delete the chat
+
+Endpoint: `chat/deleteChat`
+
+Method: `DELETE`
+
+Description: Delete the Chat Permanently.
+
+Request body: 
+
+```json
+{
+    "chatId":"6e4CSMIOqhaIbCOrZBqG",
+}
+```
+
+Response Data:
+
+```json
+{
+    "message": "chat deleted successfully"
+}
+```
+
+### Send the Message
+
+Endpoint: `message/sendMsg`
+
+Method: `POST`
+
+Description: Add the message to the conversation
+
+Request body: 
+
+```json
+{
+    "chatId":"xUSTxQiRZUfJkanJbQG1",
+    "content":"are you there?"
+}
+```
+
+Response Data:
+
+```json
+
+{
+   "status":"success",
+    "id": "eGtIWfxFaQU0k1sgXwoC"
+}
+
+```
+### Get all messages
+
+Endpoint: `message/getAll`
+
+Method: `GET`
+
+Description: Retrieve all messages associated with a specific chat ID.
+
+Request params: 
+
+```json
+{
+    "chatId":"xUSTxQiRZUfJkanJbQG1",
+}
+```
+
+Response Data:
+
+```json
+
+{
+    "status": "success",
+    "data": [
+        {
+            "chatId": "xUSTxQiRZUfJkanJbQG1",
+            "sender": "kPtLs6EB74dwrwZjm8GQ",
+            "content": "are you there?"
+        },
+        {
+            "chatId": "xUSTxQiRZUfJkanJbQG1",
+            "sender": "kPtLs6EB74dwrwZjm8GQ",
+            "content": "hey man can you reply please?"
+        },
+        {
+            "chatId": "xUSTxQiRZUfJkanJbQG1",
+            "sender": "kPtLs6EB74dwrwZjm8GQ",
+            "content": "hi"
+        },
+        {
+            "chatId": "xUSTxQiRZUfJkanJbQG1",
+            "sender": "kPtLs6EB74dwrwZjm8GQ",
+            "content": "hi bro"
+        },
+        {
+            "chatId": "xUSTxQiRZUfJkanJbQG1",
+            "sender": "kPtLs6EB74dwrwZjm8GQ",
+            "content": "are you there?"
+        },
+        {
+            "chatId": "xUSTxQiRZUfJkanJbQG1",
+            "sender": "kPtLs6EB74dwrwZjm8GQ",
+            "content": "hi lava how are you?"
+        }
+    ]
+}
+
+```
+
 # Technology Stack:
 | Technology | Description |
 | ---------- | ----------- |
