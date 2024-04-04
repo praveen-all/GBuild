@@ -11,7 +11,7 @@ Note : Upon successful login or signup, an authorization JWT token will be provi
 headers :
 ```json
  {
-      Authorization: `Bearer token`,
+      "Authorization": "Bearer ${token}",
  }
 ````
 
