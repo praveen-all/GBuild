@@ -233,6 +233,172 @@ This repository contains the backend code for an attendance tracking system API.
   }
 --------
 
+# TestScore Management System API
+
+## Endpoints
+### Add Test Score
+
+Endpoint: `test/add`
+
+Method: `POST`
+
+Description: Implement a feature to record and manage test scores for each semester
+
+Request body: 
+
+```json
+{
+        "testname": "first internal",
+        "subjects": ["COA","DSD","DSA","M3","Java","Python"],
+        "marks": [19,18,19,20,20,20],
+        "sem":3
+}
+```
+
+Response Data:
+
+```json
+
+    {
+    "status": "success",
+    "data": {
+        "subjects": [
+            "COA",
+            "DSD",
+            "DSA",
+            "M3",
+            "Java",
+            "Python"
+        ],
+        "sem": 3,
+        "marks": [
+            19,
+            18,
+            19,
+            20,
+            20,
+            20
+        ],
+        "testname": "first internal",
+        "userId": "kPtLs6EB74dwrwZjm8GQ"
+    }
+}
+
+````
+
+
+### Get Test Score
+
+Endpoint: `test/getSemTest`
+
+Method: `GET`
+
+Description: Retrieve detailed information about test marks for each semester, enabling a comprehensive view of academic performance over time
+
+Request Params: 
+
+```json
+{
+    "sem":3
+}
+```
+
+Response Data:
+
+```json
+
+    {
+    "status": "success",
+    "data": [
+        {
+            "subjects": [
+                "cao",
+                "dsd",
+                "maths 4",
+                "dsa",
+                "java",
+                "c"
+            ],
+            "sem": "3",
+            "marks": [
+                "20",
+                "20",
+                "20",
+                "20",
+                "19",
+                "20"
+            ],
+            "testname": "third internal",
+            "userId": "kPtLs6EB74dwrwZjm8GQ"
+        },
+        {
+            "subjects": [
+                "cao",
+                "dsd",
+                "maths 4",
+                "dsa",
+                "java",
+                "c"
+            ],
+            "sem": "3",
+            "marks": [
+                "19",
+                "20",
+                "19",
+                "20",
+                "19",
+                "20"
+            ],
+            "testname": "first internal",
+            "userId": "kPtLs6EB74dwrwZjm8GQ"
+        },
+        {
+            "subjects": [
+                "cao",
+                "dsd",
+                "maths 4",
+                "dsa",
+                "java",
+                "c"
+            ],
+            "sem": "3",
+            "marks": [
+                "99",
+                "98",
+                "78",
+                "56",
+                "76",
+                "98"
+            ],
+            "testname": "sem end exam",
+            "userId": "kPtLs6EB74dwrwZjm8GQ"
+        },
+        {
+            "subjects": [
+                "cao",
+                "dsd",
+                "maths 4",
+                "dsa",
+                "java",
+                "c"
+            ],
+            "sem": "3",
+            "marks": [
+                "20",
+                "19",
+                "20",
+                "19",
+                "20",
+                "19"
+            ],
+            "testname": "second internal",
+            "userId": "kPtLs6EB74dwrwZjm8GQ"
+        }
+    ]
+}
+````
+
+
 # Collabration  System API
 Collaboration System API for facilitating user communication and notifications within a collaborative platform.
 
