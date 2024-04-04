@@ -36,6 +36,29 @@ Our solution is designed to cater to the academic needs of Varun, a student at t
    - Allows Varun to set reminders for assignment deadlines, project submissions, exam dates, and more.
    - Facilitates organization and helps Varun meet academic commitments.
 
+# Attendance Tracking System API
+
+This repository contains the backend code for an attendance tracking system API. This API allows users to add subjects for tracking attendance within a specific semester.
+
+## Endpoints
+
+### Create Attendance
+
+Endpoint: `/attend`
+
+Method: `POST`
+
+Description: Adds a new subject for a user of a semester to track attendance.
+
+Request Body:
+
+```json
+{
+  "userId": "user_id_here",
+  "semester": "semester_name_here",
+  "subject": "subject_name_here"
+}
+
 #### Technology Stack:
 | Technology | Description |
 | ---------- | ----------- |
