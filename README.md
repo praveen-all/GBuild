@@ -53,7 +53,12 @@ Request Body:
 
 ```json
 {
-  
+  "userId": "user_id_here",
+  "semester": "semester_name_here",
+  "subject": "subject_name_here",
+  "classesAttended": 10,
+  "totalClasses": 15
+
 }
 ```
 ### Get Attendance
