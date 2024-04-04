@@ -6,19 +6,19 @@ Our solution is designed to cater to the academic needs of Varun, a student at t
 </div>
 
 #### Features Implemented:
-- # Student Performance Analytics API
+ # Student Performance Analytics API
    - When Varun enters his test scores for each course, he   interacts with the system by sending a request to add the test  scores.
    - He provides the test scores along with the semester information.
     The system stores this information securely in the database, allowing Varun to track his academic progress over time.
 
-- # Student Expense Management API 
+ # Student Expense Management API 
    - Provides a tool to track expenses related to college.
    - Includes tuition fees, textbooks, stationery, and other educational expenses.
-- # Student Task Management API
+ # Student Task Management API
    - Allows Varun to set reminders for assignment deadlines, project submissions, exam dates, and more.
    - Facilitates organization and helps Varun meet academic commitments.
 
-- # Attendance Tracking System API
+ # Attendance Tracking System API
 
 This repository contains the backend code for an attendance tracking system API. This API allows users to add subjects for tracking attendance within a specific semester.
 
