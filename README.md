@@ -39,6 +39,42 @@ Request Body:
 }
 ```
 
+#### GET All Deadlines
+
+Endpoint: `/deadline/:userId`
+
+Method: `GET`
+
+Description: Gives json response of all the deadlines listed by the user
+
+Request Body:
+
+```json
+{
+  "userId": "user_id_here",
+  "taskName": "task_name_here",
+  "deadlineDate": "deadline_date_here"
+}
+```
+
+#### GET Today's Deadlines
+
+Endpoint: `/deadline/today/:userId`
+
+Method: `GET`
+
+Description: Gives json response of all the deadlines for the current day listed by the user
+
+Request Body:
+
+```json
+{
+  "userId": "user_id_here",
+  "taskName": "task_name_here",
+  "deadlineDate": "deadline_date_here"
+}
+```
+
 
  # Attendance Tracking System API
 
