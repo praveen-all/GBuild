@@ -597,6 +597,137 @@ Response Data:
 
 ```
 
+### Update the chat
+
+Endpoint: `chat/updateChatName`
+
+Method: `PUT`
+
+Description: Update the chat name by providing the chat ID as a parameter.
+
+Request body: 
+
+```json
+{
+    "chatname":"lava uvce ise",
+    "chatId":"xUSTxQiRZUfJkanJbQG1"
+}
+```
+
+Response Data:
+
+```json
+
+{
+   "message":"chat updated successfull"
+}
+
+```
+
+# Academic Resources Repository API system
+ Academic Resources Repository API system for managing and accessing educational materials efficiently
+ 
+## Endpoints
+
+### Cloud File Storage
+
+Endpoint: `/upload`
+
+Method: `POST`
+
+Description:Upload files to Firebase Storage and receive a public URL for easy access.
+
+Request formData: 
+
+```json
+{
+    "file":FILE
+}
+```
+
+Response Data:
+
+```json
+
+{
+    "url": "https://storage.googleapis.com/node-fire-bf50d.appspot.com/1712222036093_backgroundImage.jpg"
+}
+
+```
+
+### Create Resources Repo
+
+Endpoint: `/resource/add`
+
+Method: `POST`
+
+Description:Store Title and Source Link in Database.
+
+Request body: 
+
+```json
+{
+       url:"https://storage.googleapis.com/node-fire-bf50d.appspot.com/1712215514551_Praveen_Kumar_G%20_resume.pdf",
+       title:"my resume"
+}
+```
+
+Response Data:
+
+```json
+
+{
+    "status":"success",
+    "message":"added successfully",
+}
+
+```
+
+### Get All Resources Repo
+
+Endpoint: `/resource/get`
+
+Method: `GET`
+
+Description:Retrieve All Resources from Repository.
+
+Response Data:
+
+```json
+
+[
+    {
+        "id": "3a2CLHxn8ktkD3QI5onB",
+        "title": "my resume",
+        "userId": "kPtLs6EB74dwrwZjm8GQ",
+        "url": "https://storage.googleapis.com/node-fire-bf50d.appspot.com/1712215514551_Praveen_Kumar_G _resume.pdf"
+    },
+    {
+        "id": "eC5qnAvFZnuboluRUC0x",
+        "title": "kiran image",
+        "userId": "kPtLs6EB74dwrwZjm8GQ",
+        "url": "https://storage.googleapis.com/node-fire-bf50d.appspot.com/1712214853630_screeshot.png"
+    },
+    {
+        "id": "fTPKAKjLAhrphm6GflkY",
+        "title": "codewar image",
+        "userId": "kPtLs6EB74dwrwZjm8GQ",
+        "url": "https://storage.googleapis.com/node-fire-bf50d.appspot.com/1712222132169_codeWarImage1.jpg"
+    },
+    {
+        "id": "jflkcm36KSza06GsL35T",
+        "title": "small images",
+        "userId": "kPtLs6EB74dwrwZjm8GQ",
+        "url": "https://storage.googleapis.com/node-fire-bf50d.appspot.com/1712212937834_screeshot.png"
+    }
+]
+
+```
+
+
+
+
+
 # Technology Stack:
 | Technology | Description |
 | ---------- | ----------- |
