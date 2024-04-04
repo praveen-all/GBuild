@@ -14,9 +14,30 @@ Our solution is designed to cater to the academic needs of Varun, a student at t
  # Student Expense Tracker API 
    - Provides a tool to track expenses related to college.
    - Includes tuition fees, textbooks, stationery, and other educational expenses.
- # Student Task Management API
-   - Allows Varun to set reminders for assignment deadlines, project submissions, exam dates, and more.
-   - Facilitates organization and helps Varun meet academic commitments.
+     
+ # Deadline Reminder
+
+This repository contains the backend code for a deadline reminder system. This API allows users to add, retrieve, and delete deadlines.
+
+### Endpoints
+
+#### Add Deadline
+
+Endpoint: `/deadline`
+
+Method: `POST`
+
+Description: Adds a new deadline for a user.
+
+Request Body:
+
+```json
+{
+  "userId": "user_id_here",
+  "taskName": "task_name_here",
+  "deadlineDate": "deadline_date_here"
+}```
+
 
  # Attendance Tracking System API
 
