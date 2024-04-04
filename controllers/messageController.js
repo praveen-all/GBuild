@@ -28,7 +28,7 @@ const sendMessage = async (req, res) => {
 };
 
 const getAllMsg = async (req, res) => {
-  const { chatId } = req.body;
+  const { chatId } = req.query;
   if (!chatId) {
     res.status(401).json("plese provide the chatId");
   }

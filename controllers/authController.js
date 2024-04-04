@@ -31,7 +31,7 @@ async function register(req, res) {
         res.status(200).json({
           status: "success",
           token,
-          data: newUser,
+          data: { ...(await newUser.get(newUser.id)).data(), id: newUser.id },
         });
     } catch (error) {
         console.error(error);
@@ -60,9 +60,9 @@ async function login(req, res) {
         const token = jwt.sign({ userId: userDoc.docs[0].id }, secret, { expiresIn: '10d' });
 
         res.status(200).json({
-          status:"success",
+          status: "success",
           token,
-          data: userDoc.docs[0].data(),
+          data: { ...userDoc.docs[0].data(), id: userDoc.docs[0].id},
         });
     } catch (error) {
         console.error(error);

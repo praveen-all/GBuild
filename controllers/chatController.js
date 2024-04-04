@@ -7,7 +7,7 @@ const userCollection = admin.firestore().collection("users");
 
 const findUser = async (req, res) => {
   const { name } = req.query;
-    console.log(name);
+  console.log(name);
   if (!name) {
     return res.status(404).json({
       status: "error",
@@ -65,7 +65,13 @@ const createChat = async (req, res) => {
       users: users.map((uid) => userCollection.doc(uid)),
     });
 
-    res.status(201).json({ status:"sucess",id: newChatRef.id,message:'chat created success' });
+    res
+      .status(201)
+      .json({
+        status: "sucess",
+        id: newChatRef.id,
+        message: "chat created success",
+      });
   } catch (error) {
     console.error("Error getting chats:", error.message);
     res.status(500).json({
@@ -77,7 +83,7 @@ const createChat = async (req, res) => {
 
 const createGroup = async (req, res) => {
   try {
-    const { chatname, isGroupChat, userss } = req.body;
+    const { chatname, isGroupChat, userss} = req.body;
     const users = [req.userId, ...userss];
     const groupAdmin = req.userId;
     // Validate request body
@@ -293,6 +299,5 @@ module.exports = {
   getAllChatbyUserId,
   updateGroupName,
   addUserTogroup,
-  deleteChat
-  
+  deleteChat,
 };
