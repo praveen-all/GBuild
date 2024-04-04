@@ -641,7 +641,7 @@ Request formData:
 
 ```json
 {
-    "file":FILE
+    "file":"FILE"
 }
 ```
 
@@ -667,8 +667,8 @@ Request body:
 
 ```json
 {
-       url:"https://storage.googleapis.com/node-fire-bf50d.appspot.com/1712215514551_Praveen_Kumar_G%20_resume.pdf",
-       title:"my resume"
+       "url":"https://storage.googleapis.com/node-fire-bf50d.appspot.com/1712215514551_Praveen_Kumar_G%20_resume.pdf",
+      " title":"my resume"
 }
 ```
 
@@ -689,7 +689,7 @@ Endpoint: `/resource/get`
 
 Method: `GET`
 
-Description:Retrieve All Resources from Repository.
+Description: Retrieve All Resources from Repository.
 
 Response Data:
 
