@@ -19,7 +19,7 @@ headers :
 ````
 
 # Features Implemented:
-# TestScore Management System API
+# Student TestScore Analytics API
 The API facilitates the management of test scores, allowing users to record and track scores for various subjects within specified semesters.
 ## Endpoints
 ### Add Test Score
@@ -39,35 +39,6 @@ The API facilitates the management of test scores, allowing users to record and 
 }
 ```
 
-- **Response Data**:
-```json
-    {
-    "status": "success",
-    "data": {
-        "subjects": [
-            "COA",
-            "DSD",
-            "DSA",
-            "M3",
-            "Java",
-            "Python"
-        ],
-        "sem": 3,
-        "marks": [
-            19,
-            18,
-            19,
-            20,
-            20,
-            20
-        ],
-        "testname": "first internal",
-        "userId": "kPtLs6EB74dwrwZjm8GQ"
-    }
-}
-````
-
-
 ### Get Test Score
 - **Endpoint**: `test/getSemTest`
 - **Method**: `GET`
@@ -81,122 +52,18 @@ The API facilitates the management of test scores, allowing users to record and 
 ```
 - **Response Data**:
 ```json
-    {
+ {
     "status": "success",
     "data": [
         {
-            "subjects": [
-                "cao",
-                "dsd",
-                "maths 4",
-                "dsa",
-                "java",
-                "c"
-            ],
-            "sem": "3",
-            "marks": [
-                "20",
-                "20",
-                "20",
-                "20",
-                "19",
-                "20"
-            ],
+            "subjects": ["COA","DSD","DSA","M3","Java","Python"],
+            "marks": [19,18,19,20,20,20],
             "testname": "third internal",
             "userId": "kPtLs6EB74dwrwZjm8GQ"
         },
-        {
-            "subjects": [
-                "cao",
-                "dsd",
-                "maths 4",
-                "dsa",
-                "java",
-                "c"
-            ],
-            "sem": "3",
-            "marks": [
-                "19",
-                "20",
-                "19",
-                "20",
-                "19",
-                "20"
-            ],
-            "testname": "first internal",
-            "userId": "kPtLs6EB74dwrwZjm8GQ"
-        },
-        {
-            "subjects": [
-                "cao",
-                "dsd",
-                "maths 4",
-                "dsa",
-                "java",
-                "c"
-            ],
-            "sem": "3",
-            "marks": [
-                "99",
-                "98",
-                "78",
-                "56",
-                "76",
-                "98"
-            ],
-            "testname": "sem end exam",
-            "userId": "kPtLs6EB74dwrwZjm8GQ"
-        },
-        {
-            "subjects": [
-                "cao",
-                "dsd",
-                "maths 4",
-                "dsa",
-                "java",
-                "c"
-            ],
-            "sem": "3",
-            "marks": [
-                "20",
-                "19",
-                "20",
-                "19",
-                "20",
-                "19"
-            ],
-            "testname": "second internal",
-            "userId": "kPtLs6EB74dwrwZjm8GQ"
-        }
-    ]
-}
+       ]
+   }
 ````
-
-# Student Test-Score Analytics API
- This repository contains the backend code to track Scores. This API allows users to add and retrieve Scores.  
- ### Add Test-Score
-
-- **Endpoint:** `/tests`
-- **Method:** `POST`
-- **Description:** Adds a new test score for a user.
-- **Request Body:**
-  ```json
-  {
-    "userId": "user_id_here",
-    "score": 85,
-    "sem": "semester_name_here"
-  }
- ### Get Test-Score
-
-- **Endpoint:** `/tests`
-- **Method:** `GET`
-- **Description:** Retrieves test scores for a specific semester and user.
-- **Request Body:**
-  ```json
-  {
-    "userId": "user_id_here",
-    "sem": "semester_name_here"
-  }
  # Attendance Tracking System API
 
 This repository contains the backend code for an attendance tracking system API. This API allows users to add subjects for tracking attendance within a specific semester.
@@ -256,24 +123,7 @@ This repository contains the backend code for an attendance tracking system API.
             "attendancePercentage": 50,
             "id": "LQcc5zJphl61r64gxyNL"
         },
-        {
-            "subject": "DBMS",
-            "semester": 3,
-            "userId": "CEDpGAnGPN5iFLhjfWyi",
-            "totalClasses": 22,
-            "attendancePercentage": 81.81818181818183,
-            "classesAttended": 18,
-            "id": "fSYJui8xtO0mW3WQR3yY"
-        },
-        {
-            "subject": "OS",
-            "semester": 3,
-            "userId": "CEDpGAnGPN5iFLhjfWyi",
-            "totalClasses": 4,
-            "attendancePercentage": 50,
-            "classesAttended": 2,
-            "id": "vkDsNP5s8o3gm4VJwz0W"
-        }
+       
     ]
   }
 --------
@@ -366,13 +216,6 @@ This repository contains the backend code for a deadline reminder system. This A
             "userId": "CEDpGAnGPN5iFLhjfWyi",
             "id": "0nYwFNFOwpfYsfo522vI"
         },
-        {
-            "deadlineDate": "2024-04-04",
-            "taskName": "DBMS Proj",
-            "completed": false,
-            "userId": "CEDpGAnGPN5iFLhjfWyi",
-            "id": "LAXh2WsmzM6vS8TS76sT"
-        }
     ]
    }
 ### GET Today's Deadlines
@@ -465,19 +308,7 @@ Collaboration System API for facilitating user communication and notifications w
             "email": "kiran.46.47@gmail.com",
             "phoneNumber": 123456789,
             "sem": 3
-        },
-        {
-            "name": "lava",
-            "email": "lava.46.47@gmail.com",
-            "phoneNumber": 123456789,
-            "sem": 3
-        },
-        {
-            "name": "manu",
-            "email": "manu.46.47@gmail.com",
-            "phoneNumber": 123456789,
-            "sem": 3
-        }
+        }, { ... }
     ]
 }
 ```
@@ -501,72 +332,9 @@ Collaboration System API for facilitating user communication and notifications w
                     "email": "pngh.46.47@gmail.com",
                     "name": "Praveen Kumar G",
                     "phoneNumber": 7892626547
-                },
-                {
-                    "id": "snYORls5tazdl47TlYP1",
-                    "email": "kiran.46.47@gmail.com",
-                    "name": "kiran",
-                    "phoneNumber": 123456789
-                },
-                {
-                    "id": "frAe1KukfYsbvzwSc6DX",
-                    "email": "lava.46.47@gmail.com",
-                    "name": "lava",
-                    "phoneNumber": 123456789
-                },
-                {
-                    "id": "Z8biT1s6VxInca5BK75B",
-                    "email": "manu.46.47@gmail.com",
-                    "name": "manu",
-                    "phoneNumber": 123456789
-                }
+                }, { ... }
             ]
         },
-        {
-            "id": "Z8uT5u8rRkw0GJT3X1G8",
-            "chatname": "lava",
-            "isGroupChat": false,
-            "users": [
-                {
-                    "id": "kPtLs6EB74dwrwZjm8GQ",
-                    "email": "pngh.46.47@gmail.com",
-                    "name": "Praveen Kumar G",
-                    "phoneNumber": 7892626547
-                },
-                {
-                    "id": "frAe1KukfYsbvzwSc6DX",
-                    "email": "lava.46.47@gmail.com",
-                    "name": "lava",
-                    "phoneNumber": 123456789
-                }
-            ]
-        },
-        {
-            "id": "GMou3KDxEgCNXsZsMAbJ",
-            "groupAdmin": "kPtLs6EB74dwrwZjm8GQ",
-            "chatname": "hi gorup",
-            "isGroupChat": true,
-            "users": [
-                {
-                    "id": "kPtLs6EB74dwrwZjm8GQ",
-                    "email": "pngh.46.47@gmail.com",
-                    "name": "Praveen Kumar G",
-                    "phoneNumber": 7892626547
-                },
-                {
-                    "id": "Z8biT1s6VxInca5BK75B",
-                    "email": "manu.46.47@gmail.com",
-                    "name": "manu",
-                    "phoneNumber": 123456789
-                },
-                {
-                    "id": "snYORls5tazdl47TlYP1",
-                    "email": "kiran.46.47@gmail.com",
-                    "name": "kiran",
-                    "phoneNumber": 123456789
-                }
-            ]
-        }
     ]
 }
 ```
@@ -659,32 +427,7 @@ Collaboration System API for facilitating user communication and notifications w
             "chatId": "xUSTxQiRZUfJkanJbQG1",
             "sender": "kPtLs6EB74dwrwZjm8GQ",
             "content": "are you there?"
-        },
-        {
-            "chatId": "xUSTxQiRZUfJkanJbQG1",
-            "sender": "kPtLs6EB74dwrwZjm8GQ",
-            "content": "hey man can you reply please?"
-        },
-        {
-            "chatId": "xUSTxQiRZUfJkanJbQG1",
-            "sender": "kPtLs6EB74dwrwZjm8GQ",
-            "content": "hi"
-        },
-        {
-            "chatId": "xUSTxQiRZUfJkanJbQG1",
-            "sender": "kPtLs6EB74dwrwZjm8GQ",
-            "content": "hi bro"
-        },
-        {
-            "chatId": "xUSTxQiRZUfJkanJbQG1",
-            "sender": "kPtLs6EB74dwrwZjm8GQ",
-            "content": "are you there?"
-        },
-        {
-            "chatId": "xUSTxQiRZUfJkanJbQG1",
-            "sender": "kPtLs6EB74dwrwZjm8GQ",
-            "content": "hi lava how are you?"
-        }
+        },{ ... }
     ]
 }
 ```
@@ -756,25 +499,7 @@ Collaboration System API for facilitating user communication and notifications w
         "title": "my resume",
         "userId": "kPtLs6EB74dwrwZjm8GQ",
         "url": "https://storage.googleapis.com/node-fire-bf50d.appspot.com/1712215514551_Praveen_Kumar_G _resume.pdf"
-    },
-    {
-        "id": "eC5qnAvFZnuboluRUC0x",
-        "title": "kiran image",
-        "userId": "kPtLs6EB74dwrwZjm8GQ",
-        "url": "https://storage.googleapis.com/node-fire-bf50d.appspot.com/1712214853630_screeshot.png"
-    },
-    {
-        "id": "fTPKAKjLAhrphm6GflkY",
-        "title": "codewar image",
-        "userId": "kPtLs6EB74dwrwZjm8GQ",
-        "url": "https://storage.googleapis.com/node-fire-bf50d.appspot.com/1712222132169_codeWarImage1.jpg"
-    },
-    {
-        "id": "jflkcm36KSza06GsL35T",
-        "title": "small images",
-        "userId": "kPtLs6EB74dwrwZjm8GQ",
-        "url": "https://storage.googleapis.com/node-fire-bf50d.appspot.com/1712212937834_screeshot.png"
-    }
+    },{ ... }
 ]
 ```
 # Technology Stack:
