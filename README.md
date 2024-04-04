@@ -11,7 +11,7 @@ Our solution is designed to cater to the academic needs of Varun, a student at t
    - He provides the test scores along with the semester information.
     The system stores this information securely in the database, allowing Varun to track his academic progress over time.
 
- # Student Expense Management API 
+ # Student Expense Tracker API 
    - Provides a tool to track expenses related to college.
    - Includes tuition fees, textbooks, stationery, and other educational expenses.
  # Student Task Management API
