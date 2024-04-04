@@ -71,13 +71,9 @@ This repository contains the backend code for an attendance tracking system API.
 ## Endpoints
 
 ### Create Attendance
-
 - **Endpoint**: `/attend`
-
 - **Method**: `POST`
-
 - **Description**: Adds a new subject for a user of a semester to track attendance.
-
 - **Request Body**:
    ```json
    {
@@ -87,13 +83,9 @@ This repository contains the backend code for an attendance tracking system API.
    }
 
 ### Update Attendance
-
 - **Endpoint**: `/:subjectId`
-
 - **Method**: `PUT`
-
 - **Description**: Updates the attendance data for the specified subject ID.
-
 - **Request Body**: 
   ```json
   {
@@ -104,11 +96,8 @@ This repository contains the backend code for an attendance tracking system API.
     "totalClasses": 15
   }
 ### Get Attendance
-
 - **Endpoint**: `/:userId`
-
 - **Method**: `GET`
-
 - **Description**: Retrieves the attendance details of all the subject added by the user  
 - **Response Data**:
   ```json
@@ -123,7 +112,6 @@ This repository contains the backend code for an attendance tracking system API.
             "attendancePercentage": 50,
             "id": "LQcc5zJphl61r64gxyNL"
         },
-       
     ]
   }
 --------
@@ -180,15 +168,10 @@ This repository contains the backend code for an attendance tracking system API.
 This repository contains the backend code for a deadline reminder system. This API allows users to add, retrieve, and delete deadlines.
 
 ## Endpoints
-
 ### Add Deadline
-
 - **Endpoint**: `/deadline`
-
 - **Method**: `POST`
-
 - **Description**: Adds a new deadline for a user.
-
 - **Request Body**:
    ```json
    {
@@ -198,13 +181,9 @@ This repository contains the backend code for a deadline reminder system. This A
    }
 
 ### GET All Deadlines
-
 - **Endpoint**: `/deadline/:userId`
-
 - **Method**: `GET`
-
 - **Description**: Gives json response of all the deadlines listed by the user
-
 - **Response Data**:
    ```json
    {
@@ -219,13 +198,9 @@ This repository contains the backend code for a deadline reminder system. This A
     ]
    }
 ### GET Today's Deadlines
-
 - **Endpoint**: `/deadline/today/:userId`
-
 - **Method**: `GET`
-
 - **Description**: Gives json response of all the deadlines for the current day (2024-04-04) listed by the user
-
 - **Response Data**:
   ```json
   {
