@@ -196,6 +196,29 @@ Description: Retrieves the attendance details of all the subject added by the us
 
 --------
 
+ # Collabration  System API
+Collaboration System API for facilitating user communication and notifications within a collaborative platform.
+
+## Endpoints
+
+### Find The User
+
+Endpoint:`chat/findUser`
+
+Method:`GET`
+
+Description: Retrieves all users whose names start with the specified parameter provided as input, facilitating efficient searching and filtering based on name prefixes
+
+Request params: 
+
+```json
+{
+   "name":"kiran"
+}
+```
+
+
+
 # Technology Stack:
 | Technology | Description |
 | ---------- | ----------- |
