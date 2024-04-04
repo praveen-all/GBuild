@@ -1,4 +1,8 @@
 # Integrated Student Academic and Expense Manager.
+<a href="#"><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js Button"></a><a href="#"><img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js Button"></a><a href="#"><img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=white" alt="Firebase Button"></a><a href="#"><img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=json-web-tokens&logoColor=white" alt="JWT Button"></a><a href="#"><img src="https://img.shields.io/badge/Google-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Google Button"></a><!-- bcryptjs Button -->
+<a href="#"><img src="https://img.shields.io/badge/bcryptjs-2.4.3-green?style=for-the-badge&logo=npm&logoColor=white" alt="bcryptjs Button"></a> <a href="#"><img src="https://img.shields.io/badge/body--parser-1.20.2-green?style=for-the-badge&logo=npm&logoColor=white" alt="body-parser Button"></a> <a href="#"><img src="https://img.shields.io/badge/cors-2.8.5-green?style=for-the-badge&logo=npm&logoColor=white" alt="cors Button"></a> <a href="#"><img src="https://img.shields.io/badge/firebase--admin-12.0.0-yellow?style=for-the-badge&logo=firebase&logoColor=white" alt="firebase-admin Button"></a> 
+<a href="#"><img src="https://img.shields.io/badge/jsonwebtoken-9.0.2-blue?style=for-the-badge&logo=npm&logoColor=white" alt="jsonwebtoken Button"></a> <a href="#"><img src="https://img.shields.io/badge/multer-1.4.5--lts.1-blue?style=for-the-badge&logo=node.js&logoColor=white" alt="multer Button"></a> <a href="#"><img src="https://img.shields.io/badge/nodemon-3.1.0-blue?style=for-the-badge&logo=npm&logoColor=white" alt="nodemon Button"></a>
+
 ## Overview
 Our solution is designed to cater to the academic needs of Varun, a student at the University Visvesvaraya College of Engineering (UVCE). It provides a robust platform to streamline his academic tasks, ensuring effective management of courses, assignments, attendance, expenses, and deadlines.
 <div style="text-align:center">
@@ -15,9 +19,9 @@ headers :
  }
 ````
 
-#### Features Implemented:
+# Features Implemented:
 # Student Performance Analytics API
- !--description .  
+ This repository contains the backend code to track Scores. This API allows users to add and retrieve Scores.  
  ### Add Test-Score
 
 - **Endpoint:** `/tests`
@@ -42,6 +46,7 @@ headers :
     "sem": "semester_name_here"
   }
  # Student Expense Tracker API 
+ Student Expense Tracker API enables students to manage and track their expenses. It allows users to add ,Get , Update and Delete Expenses.
  ## Endpoints
 ### Add Expense
 
@@ -61,7 +66,7 @@ headers :
 - **Endpoint:** `/expenses/:userId`
 - **Method:** `GET`
 - **Description:** Retrieves expenses for a specific user.
-- **Request Body:**
+- **Response Body:**
   ```json
   {
     "userId": "user_id_here",
@@ -75,8 +80,9 @@ headers :
 - **Description:** Updates the details of a specific expense.
 - **Request Body:** 
   ```json
-  {
-
+  {  
+   "amount": 60.00,
+   "category": "new_category_name_here"
   }
 
 ### Delete Expense
@@ -84,12 +90,6 @@ headers :
 - **Endpoint:** `/expenses/:expenseId`
 - **Method:** `DELETE`
 - **Description:** Deletes a specific expense.
-- **Request Body:** 
-  ```json
-  {
-   
-  }
-.
      
 # Deadline Reminder
 
@@ -244,17 +244,15 @@ This repository contains the backend code for an attendance tracking system API.
 --------
 
 # TestScore Management System API
-
+The API facilitates the management of test scores, allowing users to record and track scores for various subjects within specified semesters.
 ## Endpoints
 ### Add Test Score
+- **Endpoint**: `test/add`
 
-Endpoint: `test/add`
+- **Method**: `POST`
 
-Method: `POST`
-
-Description: Implement a feature to record and manage test scores for each semester
-
-Request body: 
+- **Description**: Implement a feature to record and manage test scores for each semester
+- **Request body**: 
 
 ```json
 {
@@ -265,10 +263,8 @@ Request body:
 }
 ```
 
-Response Data:
-
+- **Response Data**:
 ```json
-
     {
     "status": "success",
     "data": {
@@ -293,30 +289,22 @@ Response Data:
         "userId": "kPtLs6EB74dwrwZjm8GQ"
     }
 }
-
 ````
 
 
 ### Get Test Score
-
-Endpoint: `test/getSemTest`
-
-Method: `GET`
-
-Description: Retrieve detailed information about test marks for each semester, enabling a comprehensive view of academic performance over time
-
-Request Params: 
+- **Endpoint**: `test/getSemTest`
+- **Method**: `GET`
+- **Description**: Retrieve detailed information about test marks for each semester, enabling a comprehensive view of academic performance over time
+- **Request Params**: 
 
 ```json
 {
     "sem":3
 }
 ```
-
-Response Data:
-
+- **Response Data**:
 ```json
-
     {
     "status": "success",
     "data": [
@@ -407,31 +395,20 @@ Response Data:
     ]
 }
 ````
-
-
 # Collabration  System API
 Collaboration System API for facilitating user communication and notifications within a collaborative platform.
-
 ## Endpoints
-
 ### Find The User
-
-Endpoint: `chat/findUser`
-
-Method: `GET`
-
-Description: Retrieves all users whose names start with the specified parameter provided as input, facilitating efficient searching and filtering based on name prefixes
-
-Request Params: 
-
+- **Endpoint**: `chat/findUser`
+- **Method**: `GET`
+- **Description**: Retrieves all users whose names start with the specified parameter provided as input, facilitating efficient searching and filtering based on name prefixes
+- **Request Params**: 
 ```json
 {
    "name":"kiran"
 }
 ```
-
-Response Data:
-
+- **Response Data**:
 ```json
 {
     "status": "success",
@@ -444,17 +421,11 @@ Response Data:
     ]
 }
 ```
-
 ### Create a Chat
-
-Endpoint: `chat/create`
-
-Method: `POST`
-
-Description: Creates a chat between two users. The request body should include the following parameters:
-
-Request Body: 
-
+- **Endpoint**: `chat/create`
+- **Method**: `POST`
+- **Description**: Creates a chat between two users. The request body should include the following parameters:
+- **Request Body**: 
 ```json
 {
   "chatname": "lava",
@@ -462,9 +433,7 @@ Request Body:
   "isGroupChat": false
 }
 ```
-
-Response Data:
-
+- **Response Data**:
 ```json
 {
     "status": "sucess",
@@ -472,18 +441,11 @@ Response Data:
     "message": "chat created success"
 }
 ```
-
-
 ### Get the chat
-
-Endpoint: `chat/chats${chatId}`
-
-Method: `GET`
-
-Description: Retrieve the Majestic Chat Information by the Glorious Chat ID!:
-
-Response Data:
-
+- **Endpoint**: `chat/chats${chatId}`
+- **Method**: `GET`
+- **Description**: Retrieve the Majestic Chat Information by the Glorious Chat ID!:
+- **Response Data**:
 ```json
 {
     "id": "6e4CSMIOqhaIbCOrZBqG",
@@ -517,17 +479,11 @@ Response Data:
     ]
 }
 ```
-
 ### Get all chat
-
-Endpoint: `chat/getAll`
-
-Method: `GET`
-
-Description: Retrieves all users whose names start with the specified parameter provided as input, facilitating efficient searching and filtering based on name prefixes
-
-Response Data:
-
+- **Endpoint**: `chat/getAll`
+- **Method**: `GET`
+- **Description**: Retrieves all users whose names start with the specified parameter provided as input, facilitating efficient searching and filtering based on name prefixes
+- **Response Data**:
 ```json
 {
     "status": "suceess",
@@ -612,17 +568,11 @@ Response Data:
     ]
 }
 ```
-
 ### Create a group chat
-
-Endpoint: `chat/createGroup`
-
-Method: `POST`
-
-Description: Forge a Magnificent Group, Gathering Diverse Souls in Unity!
-
-Request body: 
-
+- **Endpoint**: `chat/createGroup`
+- **Method**: `POST`
+- **Description**: Forge a Magnificent Group, Gathering Diverse Souls in Unity!
+- **Request body**: 
 ```json
 {
     "chatname":"UVCE BOYS hostel",
@@ -630,111 +580,76 @@ Request body:
     "userss":["snYORls5tazdl47TlYP1","Z8biT1s6VxInca5BK75B"]
 }
 ```
-
-Response Data:
-
+- **Response Data**:
 ```json
 {
     "id": "OSQfEPYVFOySADaBY9Tc"
 }
 ```
-
 ### Add user to group
-
-Endpoint: `chat/createGroup`
-
-Method: `PUT`
-
-Description: Incorporate a user into the group
-
-Request body: 
-
+- **Endpoint**: `chat/createGroup`
+- **Method**: `PUT`
+- **Description**: Incorporate a user into the group
+- **Request body**: 
 ```json
 {
     "chatId":"6e4CSMIOqhaIbCOrZBqG",
     "userId":"V80Mv7ZkE97pfhQe4rw2"
 }
 ```
-
-Response Data:
-
+- **Response Data**:
 ```json
 {
     "message": "User added to the group successfully"
 }
 ```
-
 ### Delete the chat
-
-Endpoint: `chat/deleteChat`
-
-Method: `DELETE`
-
-Description: Delete the Chat Permanently.
-
-Request body: 
-
+- **Endpoint**: `chat/deleteChat`
+- **Method**: `DELETE`
+- **Description**: Delete the Chat Permanently.
+- **Request body**: 
 ```json
 {
     "chatId":"6e4CSMIOqhaIbCOrZBqG",
 }
 ```
-
-Response Data:
-
+- **Response Data**:
 ```json
 {
     "message": "chat deleted successfully"
 }
 ```
-
 ### Send the Message
-
-Endpoint: `message/sendMsg`
-
-Method: `POST`
-
-Description: Add the message to the conversation
-
-Request body: 
-
+- **Endpoint**: `message/sendMsg`
+- **Method**: `POST`
+- **Description**: Add the message to the conversation
+- **Request body**: 
 ```json
 {
     "chatId":"xUSTxQiRZUfJkanJbQG1",
     "content":"are you there?"
 }
 ```
-
-Response Data:
-
+- **Response Data**:
 ```json
 
 {
    "status":"success",
     "id": "eGtIWfxFaQU0k1sgXwoC"
 }
-
 ```
 ### Get all messages
-
-Endpoint: `message/getAll`
-
-Method: `GET`
-
-Description: Retrieve all messages associated with a specific chat ID.
-
-Request params: 
-
+- **Endpoint**: `message/getAll`
+- **Method**: `GET`
+- **Description**: Retrieve all messages associated with a specific chat ID.
+- **Request params**: 
 ```json
 {
     "chatId":"xUSTxQiRZUfJkanJbQG1",
 }
 ```
-
-Response Data:
-
+- **Response Data**:
 ```json
-
 {
     "status": "success",
     "data": [
@@ -770,107 +685,69 @@ Response Data:
         }
     ]
 }
-
 ```
-
 ### Update the chat
-
-Endpoint: `chat/updateChatName`
-
-Method: `PUT`
-
-Description: Update the chat name by providing the chat ID as a parameter.
-
-Request body: 
-
+- **Endpoint**: `chat/updateChatName`
+- **Method**: `PUT`
+- **Description**: Update the chat name by providing the chat ID as a parameter.
+- **Request body**: 
 ```json
 {
     "chatname":"lava uvce ise",
     "chatId":"xUSTxQiRZUfJkanJbQG1"
 }
 ```
-
-Response Data:
-
+- **Response Data**:
 ```json
-
 {
    "message":"chat updated successfull"
 }
-
 ```
-
 # Academic Resources Repository API system
  Academic Resources Repository API system for managing and accessing educational materials efficiently
- 
 ## Endpoints
 
 ### Cloud File Storage
-
-Endpoint: `/upload`
-
-Method: `POST`
-
-Description:Upload files to Firebase Storage and receive a public URL for easy access.
-
-Request formData: 
-
+- **Endpoint**: `/upload`
+- **Method**: `POST`
+- **Description**:Upload files to Firebase Storage and receive a public URL for easy access.
+- **Request formData**: 
 ```json
 {
     "file":"FILE"
 }
 ```
-
-Response Data:
-
+- **Response Data**:
 ```json
-
 {
     "url": "https://storage.googleapis.com/node-fire-bf50d.appspot.com/1712222036093_backgroundImage.jpg"
 }
-
 ```
-
 ### Create Resources Repo
-
-Endpoint: `/resource/add`
-
-Method: `POST`
-
-Description:Store Title and Source Link in Database.
-
-Request body: 
-
+- **Endpoint**: `/resource/add`
+- **Method**: `POST`
+- **Description**:Store Title and Source Link in Database.
+- **Request body**: 
 ```json
 {
        "url":"https://storage.googleapis.com/node-fire-bf50d.appspot.com/1712215514551_Praveen_Kumar_G%20_resume.pdf",
       " title":"my resume"
 }
 ```
-
-Response Data:
-
+- **Response Data**:
 ```json
-
 {
     "status":"success",
     "message":"added successfully",
 }
-
 ```
-
 ### Get All Resources Repo
 
-Endpoint: `/resource/get`
-
-Method: `GET`
-
-Description: Retrieve All Resources from Repository.
-
-Response Data:
-
+- **Endpoint**: `/resource/get`
+- **Method**: `GET`
+- **Description**: Retrieve All Resources from Repository.
+- **Response Data**:
 ```json
-
 [
     {
         "id": "3a2CLHxn8ktkD3QI5onB",
@@ -897,13 +774,7 @@ Response Data:
         "url": "https://storage.googleapis.com/node-fire-bf50d.appspot.com/1712212937834_screeshot.png"
     }
 ]
-
 ```
-
-
-
-
-
 # Technology Stack:
 | Technology | Description |
 | ---------- | ----------- |
@@ -920,7 +791,7 @@ Response Data:
 | **Scalability** | Designed backend architecture to scale seamlessly with Varun's academic needs. |
 | **Security** | Ensured data security and privacy through _encryption_ and _secure authentication_ methods. |
 
-#### Conclusions:
+# Conclusions:
  - Our solution for Varun's Academic Assistant effectively addresses the challenges he faces in managing his academic life.
  - With comprehensive features, secure authentication, and scalability, it ensures Varun can excel in his studies while maintaining a healthy work-life balance.
 
