@@ -78,13 +78,19 @@ Method: `GET`
 
 Description: Gives json response of all the deadlines for the current day listed by the user
 
-Request Body:
+Response Data:
 
 ```json
 {
-  "userId": "user_id_here",
-  "taskName": "task_name_here",
-  "deadlineDate": "deadline_date_here"
+    "deadlines": [
+        {
+            "deadlineDate": "2024-04-04",
+            "taskName": "DBMS Proj",
+            "completed": false,
+            "userId": "CEDpGAnGPN5iFLhjfWyi",
+            "id": "LAXh2WsmzM6vS8TS76sT"
+        }
+    ]
 }
 ```
 
