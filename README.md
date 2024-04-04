@@ -58,7 +58,7 @@ Request Body:
   "semester": "semester_name_here",
   "subject": "subject_name_here"
 }
-
+```
 #### Technology Stack:
 | Technology | Description |
 | ---------- | ----------- |
