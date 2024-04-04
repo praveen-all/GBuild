@@ -28,11 +28,9 @@ Our solution is designed to cater to the academic needs of Varun, a student at t
    ```
 ### Get Expense
 
-**Endpoint:** `/expenses/:userId`
-
-**Method:** `GET`
-
-**Description:** Retrieves expenses for a specific user.
+- **Endpoint:** `/expenses/:userId`
+- **Method:** `GET`
+- **Description:** Retrieves expenses for a specific user.
 - **Request Body:**
   ```json
   {
@@ -63,42 +61,39 @@ Our solution is designed to cater to the academic needs of Varun, a student at t
   }
 .
      
- # Deadline Reminder
+# Deadline Reminder
 
 This repository contains the backend code for a deadline reminder system. This API allows users to add, retrieve, and delete deadlines.
 
-### Endpoints
+## Endpoints
 
-#### Add Deadline
+### Add Deadline
 
-Endpoint: `/deadline`
+- **Endpoint**: `/deadline`
 
-Method: `POST`
+- **Method**: `POST`
 
-Description: Adds a new deadline for a user.
+- **Description**: Adds a new deadline for a user.
 
-Request Body:
+- **Request Body**:
+   ```json
+   {
+      "userId": "user_id_here",
+      "taskName": "task_name_here",
+      "deadlineDate": "deadline_date_here"
+   }
 
-```json
-{
-  "userId": "user_id_here",
-  "taskName": "task_name_here",
-  "deadlineDate": "deadline_date_here"
-}
-```
+### GET All Deadlines
 
-#### GET All Deadlines
+- **Endpoint**: `/deadline/:userId`
 
-Endpoint: `/deadline/:userId`
+- **Method**: `GET`
 
-Method: `GET`
+- **Description**: Gives json response of all the deadlines listed by the user
 
-Description: Gives json response of all the deadlines listed by the user
-
-Response Data:
-
-```json
-{
+- **Response Data**:
+   ```json
+   {
     "deadlines": [
         {
             "deadlineDate": "2024-04-05",
@@ -115,21 +110,18 @@ Response Data:
             "id": "LAXh2WsmzM6vS8TS76sT"
         }
     ]
-}
-```
+   }
+### GET Today's Deadlines
 
-#### GET Today's Deadlines
+- **Endpoint**: `/deadline/today/:userId`
 
-Endpoint: `/deadline/today/:userId`
+- **Method**: `GET`
 
-Method: `GET`
+- **Description**: Gives json response of all the deadlines for the current day (2024-04-04) listed by the user
 
-Description: Gives json response of all the deadlines for the current day (2024-04-04) listed by the user
-
-Response Data:
-
-```json
-{
+- **Response Data**:
+  ```json
+  {
     "deadlines": [
         {
             "deadlineDate": "2024-04-04",
@@ -139,10 +131,7 @@ Response Data:
             "id": "LAXh2WsmzM6vS8TS76sT"
         }
     ]
-}
-```
-
-
+  }
  # Attendance Tracking System API
 
 This repository contains the backend code for an attendance tracking system API. This API allows users to add subjects for tracking attendance within a specific semester.
@@ -151,73 +140,50 @@ This repository contains the backend code for an attendance tracking system API.
 
 ### Create Attendance
 
-Endpoint: `/attend`
+- **Endpoint**: `/attend`
 
-Method: `POST`
+- **Method**: `POST`
 
-Description: Adds a new subject for a user of a semester to track attendance.
+- **Description**: Adds a new subject for a user of a semester to track attendance.
 
-Request Body:
+- **Request Body**:
+   ```json
+   {
+     "userId": "user_id_here",
+     "semester": "semester_name_here",
+     "subject": "subject_name_here"
+   }
 
-```json
-{
-  "userId": "user_id_here",
-  "semester": "semester_name_here",
-  "subject": "subject_name_here"
-}
-```
 ### Update Attendance
 
-Endpoint: `/:subjectId`
+- **Endpoint**: `/:subjectId`
 
-Method: `PUT`
+- **Method**: `PUT`
 
-Description: Updates the attendance data for the specified subject ID.
+- **Description**: Updates the attendance data for the specified subject ID.
 
-Request Body: 
-
-```json
-{
-  "userId": "user_id_here",
-  "semester": "semester_name_here",
-  "subject": "subject_name_here",
-  "classesAttended": 10,
-  "totalClasses": 15
-
-}
-```
+- **Request Body**: 
+  ```json
+  {
+    "userId": "user_id_here",
+    "semester": "semester_name_here",
+    "subject": "subject_name_here",
+    "classesAttended": 10,
+    "totalClasses": 15
+  }
 ### Get Attendance
 
-Endpoint: `/:userId`
+- **Endpoint**: `/:userId`
 
-Method: `GET`
+- **Method**: `GET`
 
-Description: Retrieves the attendance details of all the subject added by the user  
-
+- **Description**: Retrieves the attendance details of all the subject added by the user  
+- **Request Body**:
+  ```json
+  {
+   
+  }
 --------
-
- # Collabration  System API
-Collaboration System API for facilitating user communication and notifications within a collaborative platform.
-
-## Endpoints
-
-### Find The User
-
-Endpoint:`chat/findUser`
-
-Method:`GET`
-
-Description: Retrieves all users whose names start with the specified parameter provided as input, facilitating efficient searching and filtering based on name prefixes
-
-Request params: 
-
-```json
-{
-   "name":"kiran"
-}
-```
-
-
 
 # Technology Stack:
 | Technology | Description |
